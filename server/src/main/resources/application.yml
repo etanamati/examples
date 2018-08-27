@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driverClassName: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+  h2:
+    console:
+       enabled: true      
+  liquibase:
+    contexts: default
+    change-log: classpath:db/changelog/db.changelog-master.xml
+  jackson:
+    deserialization:
+      fail-on-ignored-properties: false
+    default-property-inclusion: non-null
+
+aws:
+  s3:
+    access-key-id: access-key-id
+    access-key-secret: access-key-secret
+    region: region
+    bucket-name: bucket-name
